@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Code-Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/reset.css">
+  </head>
+  <body>
+
+     <!-- Header -->
+    <header>
+        <section class="header">
+            <div>
+                <ul>
+                    <li><a href="#View high scores">View high scores</a></li>
+                    <li id="timer">Timer</li>
+                </ul>
+            </div>
+    </header>
+
+    <!-- Start Quiz -->
+    <section>
+        <section id = "start" class = "start">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Take this quiz challenge to test your JavaScript Fundamentals.</p>
+        <p>Highest Score Wins!</p>
+        <button id="startBtn" class="btn">Start Game</button>
+
+    </section>
+
+       <!-- Quiz -->
+    <section> 
+        <section id = "quiz" class = hide>
+        <div class="question" id="ques"></div>
+        <div class="options" id="opt"></div>
+        <button onclick="checkAns()" id="btn">SUBMIT</button>
+        <div id="score"></div>
+    </section>
+
+    <script src="./assets/script.js"></script>
+
+</body>
+    </html>

@@ -1,0 +1,89 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #FBFCFE;
+    background-image: url(image1.jpeg);
+    background-size: cover;
+
+}
+  /* === HEADER === */
+
+/* Style the header with font and colors */
+.header {
+    padding: 20px;
+    color: #413b35;
+    
+}
+
+ /* Style the header with no bullet points */
+.header ul {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+  }
+
+  /* Style the ul li with colour and display */
+.header ul li {
+    font-weight: bold;
+    font-size: 150%;
+    padding: 15px;
+    
+  }
+
+#timer {
+    background-color: #fff;  
+}
+
+/* === Start Quiz Page === */
+
+#start {
+    display: block;
+}
+
+  /* Style the ul li with colour and display */
+.start h1 {
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 250%;
+    display: flex;
+    justify-content: center;
+  }
+
+.start p{
+    font-size: 150%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+  /* Style "Start Game" button with colour and display */
+  .btn {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #b48650;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+
+  #quiz {
+    width: 450px;
+    padding: 20px;
+    margin-top: 80px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+  }
+
+  .hide{
+    display: none;
+  }
+
+  
+  
+ 
