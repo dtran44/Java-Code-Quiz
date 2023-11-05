@@ -17,6 +17,7 @@
                 <ul>
                     <li><a href="#View high scores">View high scores</a></li>
                     <li id="timer">Timer</li>
+                    <label id="minutes">00</label>:<label id="seconds">00</label>
                 </ul>
             </div>
     </header>
@@ -27,16 +28,18 @@
         <h1>Coding Quiz Challenge</h1>
         <p>Take this quiz challenge to test your JavaScript Fundamentals.</p>
         <p>Highest Score Wins!</p>
+        <div class = "btn-container">
         <button id="startBtn" class="btn">Start Game</button>
+        </div>
 
     </section>
 
        <!-- Quiz -->
     <section> 
-        <section id = "quiz" class = hide>
-        <div class="question" id="ques"></div>
-        <div class="options" id="opt"></div>
-        <button onclick="checkAns()" id="btn">SUBMIT</button>
+        <section id = "quiz" class ="hide">
+        <div class="questions" id="questions"></div>
+        <div class="answers" id="answers"></div>
+        <div class="checker" id="checker"></div>
         <div id="score"></div>
     </section>
 
@@ -44,3 +47,4 @@
 
 </body>
     </html>
+
