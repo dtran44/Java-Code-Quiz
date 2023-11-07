@@ -1,0 +1,43 @@
+/* === High Score Page === */
+
+/* Style the ul li with colour and display */
+.finish h1 {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 250%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .finish p{
+    font-size: 150%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Style "Start Game" button with colour and display */
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Set height to 100% of viewport height for vertical centering */
+  }
+  
+  
+  .btn {
+    padding: 15px 25px;
+    background-color: #b48650;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+  }
+  
+  .btn:hover,
+  .btn:hover:hover.btn {
+    box-shadow: inset 0px 0px 8px rgb(228, 175, 96), 0 0 15px rgb(228, 175, 96);
+  }

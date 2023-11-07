@@ -28,8 +28,10 @@ var Questions = [
 document.getElementById('startBtn').addEventListener('click', function() {
     currentQuestion = 0; // Reset the current question to the first question.
     displayQuiz();
-    setTime();
+    requestAnimationFrame(function() {
+    startTimer();
     showQuestion();
+    });
 })
 
 // Display quiz section when the button is clicked & hide the start page
@@ -49,32 +51,28 @@ function displayQuiz() {
 
 
 // Display timer in minutes and seconds
-var minutesLabel = document.getElementById("minutes");
+function startTimer() {
 var secondsLabel = document.getElementById("seconds");
-var totalSeconds = 0;
-setInterval(setTime, 1000);
-
-function setTime() {
-  ++totalSeconds;
-  secondsLabel.innerHTML = pad(totalSeconds % 60);
-  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+var count = 75;
+ // Sets interval in variable
+var timer = setInterval(function() {
+    count--;
+    secondsLabel.textContent = count;
+    if (count === 0) {
+         // Stops execution of action at set interval
+        clearInterval(timer);
+    }
+}, 1000);
 }
 
-function pad(val) {
-  var valString = val + "";
-  if (valString.length < 2) {
-    return "0" + valString;
-  } else {
-    return valString;
-  }
-}
-
-
-// Display quiz questions
+// Retrieve the elements in the quiz section from HTML in order to load the questions and answers
 var questionArea = document.getElementById('questions');
 var answerArea = document.getElementById('answers');
 var checker = document.getElementById('checker');
 var currentQuestion = 0;
+var score = 0;
+
+//Load the questions from the array into the quiz question area
 
 function showQuestion() {
     var question = Questions[currentQuestion].question;
@@ -84,6 +82,7 @@ function showQuestion() {
     checker.textContent = '';
 }
 
+//Load the answers from the array into the quiz question area
 function loadAnswers(options) {
     answerArea.innerHTML = '';
     for (var i = 0; i < options.length; i++) {
@@ -99,11 +98,13 @@ function loadAnswers(options) {
     }
 }
 
+//Checks the selected answer by the user against the correct answer in the array
 function checkAnswer(selectedAnswer) {
     var correctAnswer = Questions[currentQuestion].correctAnswer;
 
     if (selectedAnswer === correctAnswer) {
         checker.textContent = "Correct!";
+        score++;
     } else {
         checker.textContent = "Incorrect!";
     }
@@ -111,13 +112,20 @@ function checkAnswer(selectedAnswer) {
     setTimeout(nextQuestion, 1000); // Move to the next question after a brief delay.
 }
 
+//Moves to the next question if the current question is less than the total number of questions in the array
 function nextQuestion() {
     if (currentQuestion < Questions.length - 1) {
         currentQuestion++;
         showQuestion();
-    } else {
-        alert('Quiz completed!'); // Display a message when all questions are answered.
-    }
+    } 
+    else{
+    displayScore();
+    }}
+
+    function displayScore() {
+        var scoreElement = document.getElementById('score');
+        scoreElement.textContent = score 
+
 }
 
 

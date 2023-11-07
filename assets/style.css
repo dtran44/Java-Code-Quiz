@@ -29,7 +29,7 @@ body {
   
 }
 
-#timer {
+#seconds {
   background-color: #fff;  
 }
 
@@ -70,6 +70,11 @@ body {
   font-size: 25px;
   transition: background-color 0.3s;
   border-radius: 8px;
+}
+
+.btn:hover,
+.btn:hover:hover.btn {
+  box-shadow: inset 0px 0px 8px rgb(228, 175, 96), 0 0 15px rgb(228, 175, 96);
 }
 
 #quiz {
