@@ -128,6 +128,12 @@ function nextQuestion() {
 
 }
 
+document.querySelector('a[href="index.html"]').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default behavior of the link
+    window.location.href = 'index.html'; // Redirect to index.html
+});
+
+
 
 
     
