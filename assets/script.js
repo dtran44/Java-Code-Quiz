@@ -1,3 +1,4 @@
+/* === Questions === */
 var Questions = [
     {"question": "What is the purpose of the addEventListener method in JavaScript?",
     "options": ["(a) To create a new event", "(b) To remove an event", "(c) To attach an event handler function to an element", "(d) To prevent default behavior of an event"],
@@ -30,7 +31,7 @@ document.getElementById('startBtn').addEventListener('click', function() {
     displayQuiz();
     requestAnimationFrame(function() {
     showQuestion();
-    startTimer();
+    startTimer(seconds);
     });
 })
 
@@ -92,7 +93,8 @@ function checkAnswer(selectedAnswer) {
 
     if (selectedAnswer === correctAnswer) {
         checker.textContent = "Correct!";
-        
+        score++;
+
     } else {
         checker.textContent = "Incorrect!";
     }
@@ -100,12 +102,7 @@ function checkAnswer(selectedAnswer) {
     setTimeout(nextQuestion, 1000); // Move to the next question after a brief delay.
 }
 
-document.getElementById('checker').addEventListener('click', function() {
-    if (checker.textContent = "Incorrect!"){
-    sec = -1;
-    document.getElementById("seconds").innerHTML='00:'+ sec;
-    }
-});
+
 
 //Moves to the next question if the current question is less than the total number of questions in the array
 function nextQuestion() {
@@ -127,39 +124,57 @@ var count = 75;
 var lastQuestion = Questions.length - 1
 
 // Function to update the timer display
-function updateTimerDisplay() {
+function updateTimerDisplay(seconds) {
     document.getElementById("seconds").textContent = count + " seconds left";
 }
 
-function startTimer() {
-    updateTimerDisplay(); // Initial display
+function startTimer(seconds) {
+    updateTimerDisplay(seconds); // Initial display
     var timerInterval = setInterval(function() {
         count--; // Decrement the seconds (using the correct variable name)
-        updateTimerDisplay(); // Update the display
-        if (count === 0 || currentQuestion === lastQuestion) {
+        updateTimerDisplay(seconds); // Update the display
+        if (seconds === 0 || currentQuestion === lastQuestion) {
             clearInterval(timerInterval); // Stop the timer when seconds reach 0 or when all questions are answered
+            displayScore(count - seconds); // Pass the remaining seconds as the score
         }
     }, 1000); // Update every 1 second (1000 milliseconds)
 }
 
 /* === Completion of Quiz section === */
     var initialsInput = document.querySelector("#initials");
-    
-    // create user object from user input & score
-    var initialScore = {
-    initials: initialsInput.value.trim(),
-    };
-
+    var score = 0;
 
     function displayScore() {
-        document.getElementById("seconds").textContent = count + " seconds left";
+        var score = seconds.textContent.substring(0, 2);
+        document.getElementById("score").textContent = "Your final score is: " + score;}
+ 
+    document.getElementById('submitBtn').addEventListener('click', function() {
+        // Get initials value here when the button is clicked
+        initials = initialsInput.value.trim();
         
-        
-        document.getElementById('submitBtn').addEventListener('click', function() { 
-        localStorage.setItem("initialScore", JSON.stringify(initialScore));
-        window.location.href = 'highscores.html'; // Redirect to highscores.html
+        // Check if initials are not empty
+        if (initials !== "") {
+          
+            // Store score and initials in localStorage
+            localStorage.setItem("score", JSON.stringify(score));
+            localStorage.setItem("initials", JSON.stringify(initials));
+            
+            // Redirect to highscores.html
+            window.location.href = 'highscores.html';
+
+        } else {
+            // Handle the case where initials are empty
+            alert("Please enter your initials.");
         }
-)};
+    });
+    
+    
+    
+    
+    
+      
+
+  
 
 
 

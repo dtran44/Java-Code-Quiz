@@ -119,17 +119,26 @@ body {
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ 
 }
 #finish h1 {
   font-weight: bold;
   padding: 20px;
   font-size: 250%;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  margin-top: 40px;
 }
 
 #finish p{
+  font-size: 150%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+
+}
+
+#score {
   font-size: 150%;
   padding: 5px;
   display: flex;
@@ -141,6 +150,7 @@ body {
   padding: 5px;
   display: flex;
   justify-content: center;
+  
 }
 
 
