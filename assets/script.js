@@ -25,16 +25,21 @@ var Questions = [
 },
 ];
 
+
+
 /* === Start Button function === */
 document.getElementById('startBtn').addEventListener('click', function() {
     currentQuestion = 0; // Reset the current question to the first question.
     displayQuiz();
-    requestAnimationFrame(function() {
-    showQuestion();
-    startTimer(seconds);
-    });
-})
 
+    showQuestion();
+
+    startTimer(seconds)
+
+
+    });
+
+    
 /* === Display Quiz === */
 // Display quiz section when the button is clicked & hide the start page
 function displayQuiz() {
@@ -121,7 +126,7 @@ function nextQuestion() {
 
 // Set the initial number in seconds
 var count = 75;
-var lastQuestion = Questions.length - 1
+var lastQuestion = Questions.length - 1;
 
 // Function to update the timer display
 function updateTimerDisplay(seconds) {
@@ -135,39 +140,39 @@ function startTimer(seconds) {
         updateTimerDisplay(seconds); // Update the display
         if (seconds === 0 || currentQuestion === lastQuestion) {
             clearInterval(timerInterval); // Stop the timer when seconds reach 0 or when all questions are answered
-            displayScore(count - seconds); // Pass the remaining seconds as the score
+            displayScore(count-seconds);// Pass the remaining seconds as the score
         }
     }, 1000); // Update every 1 second (1000 milliseconds)
 }
 
 /* === Completion of Quiz section === */
-    var initialsInput = document.querySelector("#initials");
-    var score = 0;
+var initialsInput = document.querySelector("#initials");
+var score = 0;
 
-    function displayScore() {
-        var score = seconds.textContent.substring(0, 2);
-        document.getElementById("score").textContent = "Your final score is: " + score;}
- 
-    document.getElementById('submitBtn').addEventListener('click', function() {
-        // Get initials value here when the button is clicked
-        initials = initialsInput.value.trim();
-        
-        // Check if initials are not empty
-        if (initials !== "") {
-          
-            // Store score and initials in localStorage
-            localStorage.setItem("score", JSON.stringify(score));
-            localStorage.setItem("initials", JSON.stringify(initials));
-            
-            // Redirect to highscores.html
-            window.location.href = 'highscores.html';
+function displayScore() {
+    var score = seconds.textContent.substring(0, 2);
+    document.getElementById("score").textContent = "Your final score is: " + score;}
 
-        } else {
-            // Handle the case where initials are empty
-            alert("Please enter your initials.");
-        }
-    });
+
+document.getElementById('submitBtn').addEventListener('click', function() {
+    // Get initials value here when the button is clicked
+    initials = initialsInput.value.trim();
     
+    // Check if initials are not empty
+    if (initials !== "") {
+      
+        // Store score and initials in localStorage
+        localStorage.setItem("score", JSON.stringify(score));
+        localStorage.setItem("initials", JSON.stringify(initials));
+        
+        // Redirect to highscores.html
+        window.location.href = 'highscores.html';
+
+    } else {
+        // Handle the case where initials are empty
+        alert("Please enter your initials.");
+    }
+});
     
     
     

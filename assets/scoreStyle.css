@@ -3,12 +3,42 @@ body {
   background: #FBFCFE;
   background-image: url(image1.jpeg);
   background-size: cover;
+  height: 100vh;
 }
 
 /* === High Score Page === */
 
-
   /* Style button with colour and display */
+ 
+  .highscores {
+    width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .highscores h1 {
+    font-weight: bold;
+    padding: 20px;
+    font-size: 250%;
+    display: flex;
+     justify-content: center;
+
+  }
+
+  .details {
+    font-size: 150%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+
+  }
+
   .btn-container {
     display: flex;
     justify-content: center;
@@ -16,22 +46,6 @@ body {
     height: 20vh; /* Set height to 100% of viewport height for vertical centering */
   }
   
-  #highscores {
-    width: 600px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-
-  .highscores h1 {
-    font-weight: bold;
-    padding: 20px;
-    font-size: 250%;
-
-  }
-
-
   .btn {
     padding: 15px 25px;
     background-color: #b48650;
