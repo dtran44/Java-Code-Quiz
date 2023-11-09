@@ -4,11 +4,11 @@ To create a quiz to test JavaScript fundamentals
 ## Description
 The goal of this project was to create a quiz to test the user on JavaScript fundamentals. To create the quiz, I used HTML, CSS and Javacript. Specifically, I learnt how to: 
 
-- Create an array with the questions, options and answer for the quiz
+- Create an array with the questions, options and the correct answer for the quiz
 - Create a function which displays the questions and checks answers 
-- Use a timer interval for the quiz and the remaining time would become the score of the user 
+- Use a timer interval for the quiz and created a function where the remaining time would become the score of the user 
 - Use local Storage to store the user's score and initials once the quiz is completed 
-- Display the user's score and intials on a high score page 
+- Display the user's score and intials on a high score page and provide an option to clear the scores from the page
 
 ## Installation
 
