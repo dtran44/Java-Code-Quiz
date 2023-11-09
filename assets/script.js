@@ -1,4 +1,4 @@
-/* === Questions === */
+/* === Questions & options array === */
 var Questions = [
     {"question": "What is the purpose of the addEventListener method in JavaScript?",
     "options": ["(a) To create a new event", "(b) To remove an event", "(c) To attach an event handler function to an element", "(d) To prevent default behavior of an event"],
@@ -36,6 +36,7 @@ document.getElementById('startBtn').addEventListener('click', function() {
 
     startTimer(seconds);
 
+    
     });
 
     

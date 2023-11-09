@@ -3,28 +3,25 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family:'Roboto', sans-serif;
 }
 
  /* media query for mobiles */
 @media screen and (max-width: 480px) {
-    main,
-    nav {
+    body {
       flex-direction: column;
     }
   }
   /* media query for tablets */
     @media screen and (max-width: 768px) {
-      main,
-      nav {
+      body {
         flex-direction: column;
       }
     }
   
   /* media query for larger screens */
   @media screen and (min-width: 992px) {
-    main,
-      nav {
+    body {
         flex-direction: column;
       }
   }
