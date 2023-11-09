@@ -34,7 +34,7 @@ document.getElementById('startBtn').addEventListener('click', function() {
 
     showQuestion();
 
-    startTimer(seconds)
+    startTimer(seconds);
 
 
     });
@@ -102,6 +102,8 @@ function checkAnswer(selectedAnswer) {
 
     } else {
         checker.textContent = "Incorrect!";
+        count -= 1; // Decrease the timer by 1 second for incorrect answers
+        updateTimerDisplay(seconds); // Update the timer display
     }
 
     setTimeout(nextQuestion, 1000); // Move to the next question after a brief delay.
@@ -110,12 +112,15 @@ function checkAnswer(selectedAnswer) {
 
 
 //Moves to the next question if the current question is less than the total number of questions in the array
+var allQuestionsAnswered = false;
+
 function nextQuestion() {
     if (currentQuestion < Questions.length - 1) {
         currentQuestion++;
         showQuestion();
     } 
     else{
+        allQuestionsAnswered = true;
         quiz.style.display = "none";
         start.style.display = "none";
         finish.style.display = "block";
@@ -126,7 +131,7 @@ function nextQuestion() {
 
 // Set the initial number in seconds
 var count = 75;
-var lastQuestion = Questions.length - 1;
+
 
 // Function to update the timer display
 function updateTimerDisplay(seconds) {
@@ -137,20 +142,29 @@ function startTimer(seconds) {
     updateTimerDisplay(seconds); // Initial display
     var timerInterval = setInterval(function() {
         count--; // Decrement the seconds (using the correct variable name)
-        updateTimerDisplay(seconds); // Update the display
-        if (seconds === 0 || currentQuestion === lastQuestion) {
+        updateTimerDisplay(count); // Update the display
+        if (count === 0 || allQuestionsAnswered) {
             clearInterval(timerInterval); // Stop the timer when seconds reach 0 or when all questions are answered
-            displayScore(count-seconds);// Pass the remaining seconds as the score
+            timerZero()
+            displayScore(count);// Pass the remaining seconds as the score
         }
     }, 1000); // Update every 1 second (1000 milliseconds)
 }
 
-/* === Completion of Quiz section === */
-var initialsInput = document.querySelector("#initials");
-var score = 0;
+//Moves to finish page when timer reaches zero
+function timerZero() {
+    if (count === 0){
+        quiz.style.display = "none";
+        start.style.display = "none";
+        finish.style.display = "block";
+        clearInterval(timer);
+    }}
 
-function displayScore() {
-    var score = seconds.textContent.substring(0, 2);
+/* === Completion of Quiz section === */
+var initialsInput = document.querySelector("#initials")
+
+function displayScore(remainingSeconds) {
+    var score = remainingSeconds;
     document.getElementById("score").textContent = "Your final score is: " + score;}
 
 
@@ -162,7 +176,7 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     if (initials !== "") {
       
         // Store score and initials in localStorage
-        localStorage.setItem("score", JSON.stringify(score));
+        localStorage.setItem("score", JSON.stringify(count));
         localStorage.setItem("initials", JSON.stringify(initials));
         
         // Redirect to highscores.html
@@ -173,22 +187,3 @@ document.getElementById('submitBtn').addEventListener('click', function() {
         alert("Please enter your initials.");
     }
 });
-    
-    
-    
-    
-      
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
