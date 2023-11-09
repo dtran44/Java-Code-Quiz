@@ -2,7 +2,7 @@
 To create a quiz to test JavaScript fundamentals
 
 ## Description
-The goal of this project was to create a quiz to test the user on JavaScript fundamentals. To create the quiz, I used HTML, CSS and Javacript. Specifically, I learnt how to: 
+The goal of this project was to create a timed quiz to test the user on JavaScript fundamentals and to store the high scores. To create the quiz, I used HTML, CSS and Javacript. Specifically, I learnt how to: 
 
 - Create an array with the questions, options and the correct answer for the quiz
 - Create a function which displays the questions and checks answers 
