@@ -36,7 +36,6 @@ document.getElementById('startBtn').addEventListener('click', function() {
 
     startTimer(seconds);
 
-
     });
 
     
@@ -175,10 +174,25 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     // Check if initials are not empty
     if (initials !== "") {
       
-        // Store score and initials in localStorage
-        localStorage.setItem("score", JSON.stringify(count));
-        localStorage.setItem("initials", JSON.stringify(initials));
+        // Retrieve existing high scores from localStorage or create an empty array
+        var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
         
+        // Add the current score and initials to the high scores array
+        var newScore = {
+            initials: initials,
+            score: count
+            
+        };
+        highScores.push(newScore);
+        
+        // Sort the high scores array in descending order based on score
+        highScores.sort(function(a, b) {
+            return b.score - a.score;
+        });
+
+        // Store the updated high scores back in localStorage
+        localStorage.setItem("highScores", JSON.stringify(highScores));
+
         // Redirect to highscores.html
         window.location.href = 'highscores.html';
 

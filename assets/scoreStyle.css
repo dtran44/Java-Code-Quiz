@@ -8,7 +8,7 @@ body {
 
 /* === High Score Page === */
 
-  /* Style button with colour and display */
+  /* Style highscores section with display properties */
  
   .highscores {
     width: 600px;
@@ -19,8 +19,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
   }
   
+  
+ /* Style highscores header with font and display properties */
   .highscores h1 {
     font-weight: bold;
     padding: 20px;
@@ -30,22 +33,26 @@ body {
 
   }
 
+  /* Style highscore details (initials & score)  with font and display properties */
   .details {
     font-size: 150%;
     padding: 5px;
-    display: flex;
-    justify-content: center;
+    display: column;
     padding: 30px;
+    margin: 10px 0;
 
   }
 
+  /* Style button container with display properties */
   .btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 20vh; /* Set height to 100% of viewport height for vertical centering */
+    margin: 20px;
   }
   
+  /* Style button class with color, cursor and display */
   .btn {
     padding: 15px 25px;
     background-color: #b48650;
@@ -56,6 +63,8 @@ body {
     transition: background-color 0.3s;
     border-radius: 8px;
   }
+  
+  /* Style button hover with a shadow */
   
   .btn:hover,
   .btn:hover:hover.btn {

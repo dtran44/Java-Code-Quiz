@@ -30,6 +30,8 @@ body {
   padding: 15px;
   
 }
+
+/* Style seconds span with font and padding */
 #seconds {
   font-weight: bold;
   font-size: 150%;
@@ -38,7 +40,7 @@ body {
 
 /* === Start Quiz Page === */
 
-/* Style the ul li with colour and display */
+/* Style the start heading with font and display */
 .start h1 {
   font-weight: bold;
   padding: 20px;
@@ -48,6 +50,7 @@ body {
   margin-top: 40px;
 }
 
+/* Style the start paragraph with font and display */
 .start p{
   font-size: 150%;
   padding: 5px;
@@ -55,7 +58,7 @@ body {
   justify-content: center;
 }
 
-/* Style "Start Game" button with colour and display */
+/* Style "Start Game" button with display */
 .btn-container {
   display: flex;
   justify-content: center;
@@ -63,7 +66,7 @@ body {
   height: 20vh; /* Set height to 100% of viewport height for vertical centering */
 }
 
-
+/* Style button class with color, cursor and display */
 .btn {
   padding: 15px 25px;
   background-color: #b48650;
@@ -75,11 +78,13 @@ body {
   border-radius: 8px;
 }
 
+/* Style button hover with a shadow */
 .btn:hover,
 .btn:hover:hover.btn {
   box-shadow: inset 0px 0px 8px rgb(228, 175, 96), 0 0 15px rgb(228, 175, 96);
 }
 
+/* Style quiz id with color and display */
 #quiz {
   width: 600px;
   padding: 20px;
@@ -96,6 +101,7 @@ body {
  
 }
 
+/* Style questions id with font and display */
 #questions {
   font-weight: bold;
   padding: 20px;
@@ -104,17 +110,19 @@ body {
   justify-content: center;
 }
 
+/* Style answers id with font, color and display */
 #answers {
   padding: 40px;
   font-size: 150%;
   background-color:  #FBFCFE;
 }
 
+/* Style hover over the answers with a background color */
 #answers :hover {
   background-color:  rgb(228, 175, 96);
 }
 
-
+/* Style checkers id with font, color and display */
 #checker {
   padding: 40px;
   font-size: 150%;
@@ -125,8 +133,7 @@ body {
 
 }
 
-
-/* Style the ul li with colour and display */
+/* Style finish id with colour and display */
 
 #finish {
   width: 600px;
@@ -141,6 +148,8 @@ body {
   transform: translate(-50%, -50%);
  
 }
+
+/* Style finish header with colour and display */
 #finish h1 {
   font-weight: bold;
   padding: 20px;
@@ -150,6 +159,7 @@ body {
   justify-content: center;
 }
 
+/* Style finish paragraph with font and display */
 #finish p{
   font-size: 150%;
   padding: 5px;
@@ -158,6 +168,7 @@ body {
 
 }
 
+/* Style score id with font and display */
 #score {
   font-size: 150%;
   padding: 5px;
@@ -165,6 +176,7 @@ body {
   justify-content: center;
 }
 
+/* Style initials input with font and display */
 .initials {
   font-size: 150%;
   padding: 15px;
