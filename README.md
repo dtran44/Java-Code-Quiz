@@ -19,7 +19,7 @@ N/A
 Link: (https://dtran44.github.io/Java-Code-Quiz/)
 
 Screenshot: 
-[alt text]([assets/images/Horiseon-Marketing-website.html)](https://github.com/dtran44/Horiseon-Marketing-website/blob/main/assets/images/Horiseon-Marketing-website.html.png)
+https://github.com/dtran44/Java-Code-Quiz/blob/main/assets/quizScreenshot.jpg
 
 ## License
 
